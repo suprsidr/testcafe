@@ -12,7 +12,7 @@ test('My first test', async t => {
     .expect(page.articleHeader.innerText).eql('Thank you, Peter Parker!');
 });
 
-test('My first test', async t => {
+test('Test should fail', async t => {
   await t
     .typeText(page.nameInput, 'Peter Parker')
     .click(page.submitButton)
