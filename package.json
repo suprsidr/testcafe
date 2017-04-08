@@ -1,0 +1,17 @@
+{
+  "name": "testcafe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome ./test.js -S -s screenshots",
+    "tc-browsers": "testcafe --list-browsers"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "testcafe": "^0.14.0"
+  }
+}
