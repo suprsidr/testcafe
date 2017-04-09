@@ -18,3 +18,16 @@ test('Test should fail', async t => {
     .click(page.submitButton)
     .expect(page.articleHeader.innerText).eql('Thank you, P. Parker!');
 });
+
+test('Click a check box and check its state', async t => {
+  await t
+    .click(page.triedTestCafe)
+    .expect(page.triedTestCafe.checked).ok();
+});
+
+test('Check radio group', async t => {
+  await t
+    .click(page.linux)
+    .click(page.windows)
+    .expect(page.os.value).eql('Windows');
+});
