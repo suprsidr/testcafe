@@ -20,5 +20,8 @@ export default class Page {
 
     // textarea
     this.comments = Selector('#comments');
+
+    // slider value
+    this.slider = Selector('#testcafe-rank');
   }
 }

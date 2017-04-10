@@ -39,10 +39,19 @@ test('Check select', async t => {
     .expect(page.preferredInterface.value).eql('JavaScript API');
 });
 
-test.only('Add comment', async t => {
+test('Add comment', async t => {
   await t
     .click(page.triedTestCafe) // enable textarea
     .typeText(page.comments, 'Goodbye cruel world')
     .typeText(page.comments, 'Hello World', { replace: true })
     .expect(page.comments.value).eql('Hello World');
 });
+
+// slider seems broken ;(
+// test.only('Drag slider', async t => {
+//     await t
+//         .click(page.triedTestCafe) // enable slider
+//         .expect(page.slider.value).eql(1)
+//         .drag('.ui-slider-handle', 360, 0, { offsetX: 10, offsetY: 10 })
+//         .expect(page.slider.value).eql(7);
+// });
