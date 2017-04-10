@@ -31,3 +31,18 @@ test('Check radio group', async t => {
     .click(page.windows)
     .expect(page.os.value).eql('Windows');
 });
+
+test('Check select', async t => {
+  await t
+    .click(page.preferredInterface)
+    .click(page.preferredInterface.find('option').withText('JavaScript API'))
+    .expect(page.preferredInterface.value).eql('JavaScript API');
+});
+
+test.only('Add comment', async t => {
+  await t
+    .click(page.triedTestCafe) // enable textarea
+    .typeText(page.comments, 'Goodbye cruel world')
+    .typeText(page.comments, 'Hello World', { replace: true })
+    .expect(page.comments.value).eql('Hello World');
+});
